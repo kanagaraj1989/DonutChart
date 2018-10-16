@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Dashboard </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.time.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.pie.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.symbol.js"></script>
+    <script type="text/javascript" src="src/investmentChart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="dashboard-container" class="container">
+        <div class="dashboard-header">
+            <div class="account-summary">
+                <div class="account-summary-header">
+                    <i class="fa fa-home home-img"></i>
+                    <h5 class="acc-summary-txt">YOUR ACCOUNT SUMMARY</h5>
+                </div>
+                <div class="account-summary-body">
+                    <table class="table account-summary-tbl">
+                        <tbody>
+                          <tr>
+                              <th class="acc-summary-table-header">
+                                  INVESTMENT 
+                                  VALUE
+                              </th>
+                              <th class="acc-summary-table-header">
+                                    CURRENT VALUE
+                              </th>
+                              <th class="acc-summary-table-header">
+                                    ANNUALISED 
+                                    RETURN
+                              </th>
+                              <th class="acc-summary-table-header">
+                                    CASH BALANCE
+                              </th>
+                          </tr>
+
+                      
+                          <tr>
+                              <td class="acc-invst-val">
+                                SGD 7,924
+                              </td>
+                              <td class="acc-curr-val">
+                                  SGD 2,839
+                              </td>
+                              <td class="acc-annual-ret">
+                                  -100% 
+                                  <i class="fa fa-arrow-down anual-ret-direction"></i>
+                              </td>
+                              <td class="acc-cash-bal">
+                                  SGD 1,092
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="investment-chart-container">
+                <div id="flot-placeholder"></div>
+            </div>
+        </div>
+            <div class="allocate-funds-container">
+                <div class="allocate-funds-body">
+                    <span class="alert-icon">
+                        <i class="fa fa-bell alert-bell"></i>
+                    </span>
+                    <span class="allocate-funds-msg">
+                        You have excess cash available for investing
+                    </span>
+                    <button class="allocate-funds-btn">Allocate Funds</button>
+                </div>
+            </div>
+            <div class="invs-body">
+                <ul class="nav nav-tabs">
+                    <li class="active invs-tab">
+                        <a data-toggle="tab" href="#investment">1 Invesrtments</a>
+                    </li>
+                    <li class="invs-tab">
+                        <a data-toggle="tab" href="#goal-plan">1 Goal(s) in planning </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                        <div id="investment" class="tab-pane fade in active">
+                            <div id="invs-card-container">
+                                <div class="invs-exist-card-body">
+                                    <table class="table card-table">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="img-container">
+                                                    <div class="img-card">
+                                                            <span class="growth-lbl"> 
+                                                                Growth
+                                                            </span> 
+                                                            <span class="lbl-edit">
+                                                                <i class="fa fa-pencil lbl-pencil"></i>
+                                                            </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Invested
+                                                </td>
+                                                <td>
+                                                    SGD 7,924
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Withdrawn
+                                                </td>
+                                                <td>
+                                                    SGD 0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Current Value
+                                                </td>
+                                                <td>
+                                                    SGD 2,839
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                 Portfolio Health
+                                                </td>
+                                                <td>
+                                                    values
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="invs-btn-grp">
+                                        <button class="btn btn-default view-btn">View</button>
+                                        <button class="btn btn-default invs-btn">Invest more</button>
+                                        <button class="btn btn-default withdraw-btn">Withdraw</button>
+                                    </div>
+                                </div>
+                                <div class="add-new-investment">
+                                    <div class="plus-div">
+                                        <i class="fa fa-plus add-invs-plus-icon"></i>
+                                    </div>
+                                    <div class="add-invs-lbl">
+                                        Add New Investment
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <div id="goal-plan" class="tab-pane fade">
+                            Goals Selected
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</body>
+</html>
